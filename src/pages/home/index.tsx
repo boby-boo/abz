@@ -7,6 +7,7 @@ import Typography from '../../components/typography';
 import SuccessBanner from '../../components/success-banner';
 import { postEmployee } from '../../services/services';
 import Preloader from '../../components/preloader';
+import { Fade } from 'react-awesome-reveal';
 
 const HomePage = () => {
     const [isSuccess, setIsSuccess] = useState(false);
@@ -57,9 +58,11 @@ const HomePage = () => {
                 <section className="clients" id="clients">
                     <div className="container">
                         <div className="clients__row">
-                            <Typography type="h2">
-                                Working with GET request
-                            </Typography>
+                            <Fade direction="up">
+                                <Typography type="h2">
+                                    Working with GET request
+                                </Typography>
+                            </Fade>
                             <Clients />
                         </div>
                     </div>
@@ -77,12 +80,14 @@ const HomePage = () => {
                                 <SuccessBanner title={successMessage} />
                             ) : (
                                 <>
-                                    <Typography
-                                        type="h2"
-                                        className="form__title"
-                                    >
-                                        Working with POST request
-                                    </Typography>
+                                    <Fade direction="up">
+                                        <Typography
+                                            type="h2"
+                                            className="form__title"
+                                        >
+                                            Working with POST request
+                                        </Typography>
+                                    </Fade>
                                     <Form handleSubmit={handleSubmit} />
                                 </>
                             )}

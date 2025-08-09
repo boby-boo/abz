@@ -3,6 +3,7 @@ import { getClients } from '../../services/services';
 import { lazy, Suspense, useCallback, useEffect, useState } from 'react';
 import type { Employee } from '../../types';
 import CardSkeleton from '../card/card-skeleton';
+import { Fade } from 'react-awesome-reveal';
 
 const Card = lazy(() => import('../card'));
 
@@ -36,17 +37,19 @@ const Clients = () => {
                 ))}
             </ul>
             <div className="clients__button">
-                <Button
-                    type="yellow"
-                    onClick={() => fetchClients(nextPage)}
-                    disabled={!nextPage || isLoading}
-                >
-                    {isLoading && nextPage
-                        ? 'Loading...'
-                        : !isLoading && !nextPage
-                          ? 'No more users'
-                          : 'Show more'}
-                </Button>
+                <Fade direction="up">
+                    <Button
+                        type="yellow"
+                        onClick={() => fetchClients(nextPage)}
+                        disabled={!nextPage || isLoading}
+                    >
+                        {isLoading && nextPage
+                            ? 'Loading...'
+                            : !isLoading && !nextPage
+                              ? 'No more users'
+                              : 'Show more'}
+                    </Button>
+                </Fade>
             </div>
         </>
     );
