@@ -27,7 +27,7 @@ const HomePage = () => {
 
         const response = await postEmployee(formData);
 
-        if (response.status) {
+        if (response.success) {
             setIsSuccess(true);
             setSuccessMessage(response.message);
         } else {
