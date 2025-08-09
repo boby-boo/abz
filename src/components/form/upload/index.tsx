@@ -19,7 +19,7 @@ const Upload = () => {
     const containerClass = `file-upload ${hasError ? 'error' : ''} ${fileInfo?.size ? 'filled' : ''}`;
 
     return (
-        <Fade direction="up">
+        <Fade direction="up" style={{ width: '100%' }}>
             <div
                 className={`form__upload ${hasError || !fileInfo ? 'error-input' : ''}`}
                 data-element="input"
