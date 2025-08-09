@@ -1,6 +1,7 @@
 import { scrollToSection } from '../../helpers/utils/scrollToSection';
 import Button from '../button';
 import Typography from '../typography';
+import { Fade } from 'react-awesome-reveal';
 
 const textContent = {
     title: 'Test assignment for front-end developer',
@@ -13,12 +14,23 @@ const Banner = () => {
         <div className="banner__row">
             <div className="banner__content">
                 <div className="banner__content-text">
-                    <Typography type="h1">{textContent.title}</Typography>
-                    <Typography type="p1">{textContent.description}</Typography>
+                    <Fade>
+                        <Typography type="h1">{textContent.title}</Typography>
+                    </Fade>
+                    <Fade delay={300}>
+                        <Typography type="p1">
+                            {textContent.description}
+                        </Typography>
+                    </Fade>
                 </div>
-                <Button type="yellow" onClick={() => scrollToSection('signup')}>
-                    {textContent.buttonText}
-                </Button>
+                <Fade delay={500}>
+                    <Button
+                        type="yellow"
+                        onClick={() => scrollToSection('signup')}
+                    >
+                        {textContent.buttonText}
+                    </Button>
+                </Fade>
             </div>
         </div>
     );

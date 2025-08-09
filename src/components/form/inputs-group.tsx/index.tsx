@@ -1,4 +1,5 @@
 import Input from '../input';
+import { Fade } from 'react-awesome-reveal';
 
 const inputs = [
     { name: 'name', label: 'Your name' },
@@ -14,18 +15,20 @@ const inputs = [
 const InputsGroup = () => {
     return (
         <div className="form__inputs">
-            {inputs.map(input => {
-                const { name, label, helperText, initialValue } = input;
-                return (
-                    <Input
-                        key={name}
-                        name={name}
-                        label={label}
-                        helperText={helperText}
-                        initialValue={initialValue}
-                    />
-                );
-            })}
+            <Fade direction="up" cascade duration={400}>
+                {inputs.map(input => {
+                    const { name, label, helperText, initialValue } = input;
+                    return (
+                        <Input
+                            key={name}
+                            name={name}
+                            label={label}
+                            helperText={helperText}
+                            initialValue={initialValue}
+                        />
+                    );
+                })}
+            </Fade>
         </div>
     );
 };
