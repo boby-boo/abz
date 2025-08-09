@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Banner from '../../components/banner';
-import Clients from '../../components/clients';
+import Employees from '../../components/employee';
 import Form from '../../components/form';
 import Header from '../../components/header';
 import Typography from '../../components/typography';
@@ -27,12 +27,13 @@ const HomePage = () => {
 
         const response = await postEmployee(formData);
 
-        if (response.success) {
+        if (response.status) {
             setIsSuccess(true);
             setSuccessMessage(response.message);
         } else {
             setErrors(true);
         }
+
         setIsLoading(false);
     };
 
@@ -41,7 +42,7 @@ const HomePage = () => {
             setIsSuccess(false);
             setErrors(false);
             setSuccessMessage('');
-        }, 7000);
+        }, 5000);
 
         return () => clearTimeout(timeout);
     }, [isSuccess, errors]);
@@ -55,15 +56,15 @@ const HomePage = () => {
                         <Banner />
                     </div>
                 </section>
-                <section className="clients" id="clients">
+                <section className="employees" id="employees">
                     <div className="container">
-                        <div className="clients__row">
+                        <div className="employees__row">
                             <Fade direction="up">
                                 <Typography type="h2">
                                     Working with GET request
                                 </Typography>
                             </Fade>
-                            <Clients />
+                            <Employees shouldUpdate={isSuccess} />
                         </div>
                     </div>
                 </section>
