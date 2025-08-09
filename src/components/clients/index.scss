@@ -4,6 +4,7 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 29px;
         margin-bottom: 50px;
+        min-height: 500px;
 
         @media (max-width: 768px) {
             grid-template-columns: repeat(2, 1fr);

@@ -12,3 +12,13 @@ body {
     padding: 0 10px;
     margin: 0 auto;
 }
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: $light-gray;
+    }
+
+    100% {
+        background-color: $background;
+    }
+}

@@ -1,0 +1,48 @@
+.card {
+    &.loading {
+        @include skeleton-loading(1s);
+
+        .card__image {
+            @extend .image;
+            @include skeleton-loading(2s);
+        }
+
+        .card__title {
+            @extend .skeleton-field;
+            @include skeleton-loading(2s);
+        }
+
+        .card__list {
+            width: 100%;
+            @include templateFlex(center, center);
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .card__item {
+            @extend .skeleton-field;
+            @include skeleton-loading(2s);
+
+            &:nth-child(1) {
+                max-width: 150px;
+            }
+
+            &:nth-child(2) {
+                max-width: 250px;
+            }
+        }
+
+        .card__item .card__item--email {
+            @extend .skeleton-field;
+            @include skeleton-loading(2s);
+        }
+
+    }
+}
+
+.skeleton-field {
+    min-height: 18px;
+    max-width: 230px;
+    width: 100%;
+    border-radius: 13px;
+}
