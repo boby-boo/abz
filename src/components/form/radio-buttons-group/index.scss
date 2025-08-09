@@ -1,0 +1,11 @@
+.radio-group {
+    margin-bottom: 47px;
+    @include templateFlex(flex-start, flex-start);
+    flex-direction: column;
+    gap: 7px;
+
+}
+
+.form__radio-btns-title {
+    margin-bottom: 11px;
+}

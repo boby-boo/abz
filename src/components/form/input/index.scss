@@ -1,0 +1,55 @@
+.form-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__input {
+        padding: 14px 16px;
+        border: 1px solid $background;
+        border-radius: 4px;
+        font-size: 16px;
+        color: transparentize($black, 0.4);
+        font-family: $font-family;
+
+        &:focus~.form-field__label {
+            transform: translateY(-26px);
+            font-size: 12px;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        padding: 0 2px;
+        top: 18px;
+        left: 16px;
+        color: transparentize($black, 0.4);
+        pointer-events: none;
+        background-color: $light-gray;
+        transition: transform 0.2s ease-in-out, font-size 0.2s ease-in-out;
+    }
+
+    &__helper-text {
+        padding: 4px 0 0 16px;
+        font-size: 12px;
+        color: #7e7e7e;
+    }
+
+    &.enabled-filled {
+        .form-field__label {
+            transform: translateY(-26px);
+            font-size: 12px;
+        }
+    }
+
+    &.error {
+        .form-field__input {
+            border-color: $error;
+        }
+
+        .form-field__label,
+        .form-field__helper-text {
+            color: $error;
+        }
+    }
+}

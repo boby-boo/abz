@@ -1,0 +1,33 @@
+@import 'radio-btn';
+@import 'radio-buttons-group';
+@import 'upload';
+@import 'input';
+
+.form {
+    padding: 140px 0 100px;
+
+    &__inputs {
+        width: 100%;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    &__form {
+        margin: 0 auto;
+        max-width: 380px;
+        width: 100%;
+        @include templateFlex(flex-start, flex-start);
+        flex-direction: column;
+    }
+
+    &__upload {
+        margin-bottom: 50px;
+        width: 100%;
+    }
+
+    &__button {
+        margin: 0 auto;
+    }
+}

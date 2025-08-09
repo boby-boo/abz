@@ -1,0 +1,21 @@
+@mixin templateFlex($justify-content: space-between, $align-items: center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin templateFont($size, $weight, $line-height) {
+    font-size: $size + px;
+    font-weight: $weight;
+    line-height: $line-height;
+}
+
+@mixin templateTransition($animate) {
+    transition: $animate 0.3s ease;
+}
+
+@mixin templateObjectFitCover() {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

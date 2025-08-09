@@ -1,0 +1,20 @@
+.header {
+    padding: 13px 0;
+    background-color: $light;
+
+    &__row {
+        @include templateFlex;
+        gap: 14px;
+    }
+
+    &__menu {
+        &-list {
+            @include templateFlex;
+            gap: 10px;
+        }
+
+        &-item {
+            list-style: none;
+        }
+    }
+}

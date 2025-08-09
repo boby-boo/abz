@@ -1,0 +1,62 @@
+.card {
+    @include templateFlex(center, center);
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 13px;
+    background-color: $light;
+    @include templateTransition(all);
+
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-10px);
+        background-color: transparentize($primary, 0.8);
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 22px;
+    }
+
+    &__list {
+        @include templateFlex(center, center);
+        flex-direction: column;
+    }
+}
+
+.card__item--email {
+    position: relative;
+
+    &:before,
+    &:after {
+        visibility: hidden;
+        opacity: 0;
+        @include templateTransition(opacity);
+        pointer-events: none;
+    }
+
+    &:before {
+        content: attr(title);
+        position: absolute;
+        padding: 3px 16px;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $black;
+        color: $light;
+        border-radius: 4px;
+        white-space: nowrap;
+        z-index: 10;
+    }
+
+    &:hover {
+
+        &:before,
+        &:after {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

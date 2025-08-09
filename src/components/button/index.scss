@@ -1,0 +1,22 @@
+.button {
+    padding: 4px 28px;
+    @include templateFlex(center);
+    font-size: 16px;
+    border-radius: 15px;
+    @include templateTransition(background-color);
+    cursor: pointer;
+
+    &.yellow {
+        background-color: $primary;
+
+        &:hover {
+            background-color: #FFE302;
+        }
+
+        &[disabled] {
+            color: $light;
+            background-color: #B4B4B4;
+            cursor: not-allowed;
+        }
+    }
+}

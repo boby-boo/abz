@@ -1,0 +1,13 @@
+.h1 {
+    font: 400 40px/1 $font-family;
+}
+
+.p1 {
+    font: 400 16px/1.6 $font-family;
+}
+
+.h2 {
+    @extend .h1;
+    margin-bottom: 50px;
+    text-align: center;
+}

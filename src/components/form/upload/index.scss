@@ -1,0 +1,80 @@
+.file-upload {
+    position: relative;
+    display: flex;
+    width: 100%;
+
+    &__input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px;
+        border: 1px solid $black;
+        border-radius: 4px 0 0 4px;
+        font-family: $font-family;
+        color: transparentize($black, 0.2);
+        @include templateTransition(border-color);
+        cursor: pointer;
+
+        &:hover {
+            background-color: transparentize($background, 0.8);
+        }
+    }
+
+    &__field {
+        position: relative;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        border: 1px solid $background;
+        border-left: none;
+        border-radius: 0 4px 4px 0;
+        padding: 16px;
+        color: #888;
+        font-size: 16px;
+        @include templateTransition(border-color);
+    }
+
+    &__placeholder {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__error-text {
+        padding: 4px 0 0 16px;
+        color: $error;
+        font-size: 12px;
+        margin-top: 4px;
+    }
+
+    &.filled {
+        .file-upload__field {
+            border-color: $black;
+        }
+    }
+
+    &.error {
+        .file-upload__button {
+            border-color: $error;
+        }
+
+        .file-upload__field {
+            border-color: $error;
+        }
+
+        .file-upload__error-text {
+            color: $error;
+        }
+    }
+}
