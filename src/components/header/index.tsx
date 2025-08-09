@@ -15,7 +15,7 @@ const Header = () => {
                             <li className="header__menu-item">
                                 <Button
                                     type="yellow"
-                                    onClick={() => scrollToSection('clients')}
+                                    onClick={() => scrollToSection('employees')}
                                 >
                                     Users
                                 </Button>
