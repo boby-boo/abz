@@ -1,8 +1,10 @@
-import Card from '../card';
 import Button from '../button';
 import { getClients } from '../../services/services';
-import { useCallback, useEffect, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useState } from 'react';
 import type { Employee } from '../../types';
+import CardSkeleton from '../card/card-skeleton';
+
+const Card = lazy(() => import('../card'));
 
 const Clients = () => {
     const [employees, setEmployees] = useState<Employee[] | []>([]);
@@ -28,7 +30,9 @@ const Clients = () => {
         <>
             <ul className="clients__list">
                 {employees.map(employee => (
-                    <Card key={employee.id} employee={employee} />
+                    <Suspense key={employee.id} fallback={<CardSkeleton />}>
+                        <Card employee={employee} />
+                    </Suspense>
                 ))}
             </ul>
             <div className="clients__button">
