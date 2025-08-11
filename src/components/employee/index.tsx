@@ -2,7 +2,7 @@ import Button from '../button';
 import { getClients } from '../../services/services';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import type { Employee } from '../../types';
-import CardSkeleton from '../card/card-skeleton';
+import CardSkeleton from '../card-skeleton';
 import { Fade } from 'react-awesome-reveal';
 
 const Card = lazy(() => import('../card'));

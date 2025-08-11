@@ -14,49 +14,36 @@
     }
 
     &__title {
+        max-width: 188px;
         text-align: center;
         font-size: 18px;
         font-weight: 600;
         line-height: 22px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &__list {
+        position: relative;
         @include templateFlex(center, center);
         flex-direction: column;
     }
+
+    &__item {
+        max-width: 180px;
+        line-height: 22px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 
-.card__item--email {
-    position: relative;
-
-    &:before,
-    &:after {
-        visibility: hidden;
-        opacity: 0;
-        @include templateTransition(opacity);
-        pointer-events: none;
-    }
-
-    &:before {
-        content: attr(title);
-        position: absolute;
-        padding: 3px 16px;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: $black;
-        color: $light;
-        border-radius: 4px;
-        white-space: nowrap;
-        z-index: 10;
-    }
-
+.email {
     &:hover {
-
-        &:before,
-        &:after {
-            visibility: visible;
+        .tooltip {
             opacity: 1;
+            display: block;
         }
     }
 }
